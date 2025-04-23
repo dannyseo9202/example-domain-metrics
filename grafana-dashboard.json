@@ -1,0 +1,49 @@
+{
+  "title": "Order Metrics Dashboard",
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "✅ Successful Orders",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "order_success_count",
+          "format": "time_series"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "❌ Failed Orders",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "order_failure_count",
+          "format": "time_series"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      }
+    }
+  ],
+  "schemaVersion": 37,
+  "version": 1,
+  "editable": true
+}
